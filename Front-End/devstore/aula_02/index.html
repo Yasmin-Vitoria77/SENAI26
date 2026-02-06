@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/style/style.css">
+    <title>TechFood - Cardápio Digital</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">TechFood</div>
+        <button class="search-icon">🔍</button> <button class="cart-icon">🛒</button>   </div>
+
+    <div class="banner-hero">
+        <h1>Sabor & Saber</h1>
+        <p>A melhor gastronomia tecnológica da região.</p>
+    </div>
+
+    <div class="menu-container">
+        <nav class="abas-lista">
+            <input type="radio" name="categoria" id="massa" checked>
+            <label for="massa">Massas</label>
+
+            <input type="radio" name="categoria" id="bebida">
+            <label for="bebida">Bebidas</label> 
+
+            <input type="radio" name="categoria" id="doce">
+            <label for="doce">Doces</label>
+        </nav>
+
+        <div class="aba-tela" id="tela-massas">
+            <div class="grid-produtos">
+                <div class="card">
+                    <img src="src/imagem/canelone-tradicional.jpg" alt="Massa feita junto com presunto e queijo">
+                    <h3>Canelone de presunto e queijo</h3>
+                    <p>Massa artesanal ao molho bolonhesa.</p>
+                    <span class="preco">R$ 25,90</span>
+                    <div class="btn-pedir" onclick="alert('Adicionado')">Pedir</div>
+                </div>
+
+                <div class="card">
+                    <img src="src/imagem/cocacola.jpg" alt="Refrigerante da marca Coca-Cola em um copo de vidro com gelo">
+                    <h3>Coca-Cola</h3>
+                    <p>Refrigerante, 600ml da marca Coca-Cola. Opção de copo de plástico.</p>
+                    <span class="preco">R$ 15,00</span>
+                    <div class="btn-pedir">Pedir</div>
+                </div>
+                <div class="card">
+                    <img src="src/imagem/pacoca.jpg" alt="Doce de amendoin em conjunto">
+                    <h3>Paçoca</h3>
+                    <p>Doce de amendoim natural, com formato de cilíndrico.</p>
+                    <span class="preco">R$ 5,90</span>
+                    <div class="btn-pedir" onclick="alert('Adicionado')">Pedir</div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>Siga-nos: <a href="#">FB</a> <a href="#">IG</a></p>
+    </footer>
+</body>
+</html>
