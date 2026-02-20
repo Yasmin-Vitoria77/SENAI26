@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style/style.css">
+    <title>Primeiros passos Desing Responsivo e Media Query</title>
+</head>
+<body>
+    <header id="topo-loja">
+        <h1>TechFood - Sabor e Saber</h1>
+
+        <input type="checkbox" id="bt_menu">
+        <label for="bt_menu" id="label_menu">&#9776</label>
+
+        <nav id="menu">
+            <ul>
+                <li> <a href="secao_massas">Massas</a></li>
+                <li> <a href="secao_sobremesas">Sobremesas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="secao_massas"> 
+            <h2 class="titulo_secao">Nossas Massas</h2>
+            <div class="vitrine_grid">
+                <article class="card">
+                    <img src="" alt="Lasanha a bolonhesa">
+                    <h3>Lasanha a bolonhesa</h3>
+                    <p class="desc">Massa artesanal e molho especial</p>
+                    <span class="preco">R$ 45,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+
+                 <article class="card">
+                    <img src="" alt="Nhoque ao molho pesto">
+                    <h3>Nhoque ao pesto</h3>
+                    <p class="desc">Batatas frescas e manjericão orgânico</p>
+                    <span class="preco">R$ 38,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+
+                 <article class="card">
+                    <img src="" alt="Espaguete a carbonara">
+                    <h3>Espaguete carbonara</h3>
+                    <p class="desc">Receita Original Italiana</p>
+                    <span class="preco">R$ 42,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="secao_sobremesas"> 
+            <h2 class="titulo_secao">Nossas Sobremesas</h2>
+            <div class="vitrine_grid">
+                <article class="card">
+                    <img src="" alt="Pudim de Leite">
+                    <h3>Pudim de Leite</h3>
+                    <p class="desc">O clássico com calda de caramelo</p> <!--Primeiro item da segunda seção-->
+                    <span class="preco">R$ 15,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+
+                 <article class="card">
+                    <img src="" alt="Brownie com Sorvete">
+                    <h3>Brownie com sorvete</h3>
+                    <p class="desc">Chocolate belga 70% cacau</p>
+                    <span class="preco">R$ 22,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+
+                 <article class="card">
+                    <img src="" alt="Torta de limão">
+                    <h3>Torta de Limão</h3>
+                    <p class="desc">Crocante e refrescante</p>
+                    <span class="preco">R$ 18,00</span>
+                    <button class="bt_pedido">Pedir agora</button>
+                </article>
+            </div>
+        </section>
+        <!--Nosso main se encerra aqui. Agora é o footer-->
+    </main>
+    <footer id="rodape">
+        <div class="info_footer">
+            <p><Strong>TechFood 2026© (●'◡'●)</p>   <!-- &#169 = símbolo comercial-->
+            <p>Rua das guloseimas 1200 - Jd das comilanças</p>
+        </div>
+    </footer>
+</body>
+</html>
