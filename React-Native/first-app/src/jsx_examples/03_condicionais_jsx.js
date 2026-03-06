@@ -19,6 +19,7 @@ export default function Exemplo03() {
         {temNotificacoes && <Text>Voce tem notificacoes</Text>}
         {!temNotificacoes && <Text>Nenhuma notificacao</Text>}
         {/*&& = então */}
+        {/*! = inverte o valor da variável */}
     </View>
     </View>
 );
