@@ -8,9 +8,8 @@
   </head>
   <body>
     <header id="topo-loja">
-      <h1>TechFood - Sabor & Saber</h1>
+      <h1 id="titulo-site">TechFood - Sabor & Saber</h1>
       <p id="boas-vindas">Carregando...</p>
-      <p id="nome">Seu nome aqui! </p>
 
       <input type="checkbox" id="bt_menu" />
       <label for="bt_menu" id="label-menu">&#9776;</label>
@@ -28,14 +27,22 @@
         <h2 class="titulo-secao">Nossas Massas</h2>
         <div class="vitrine-grid">
           <article class="card" id="card-lasanha">
-            <img src="src/images/lasanha.png" alt="Lasanha Tech"  id="foto-destaque"/>
+            <img
+              src="src/images/lasanha.png"
+              alt="Lasanha Tech"
+              id="foto-destaque"
+            />
             <h3>Lasanha Bolonhesa</h3>
             <p class="desc">Massa artesanal e molho especial.</p>
-            <span class="preco">R$ 45,00</span>
+            <div class="quantidade_items">
+              <label for="qtd-lasanha">Quantidade: </label>
+              <input type="number" id="qtd-lasanha" value="1" min="1">
+            </div>
+            <span class="preco" id="preco-lasanha">R$ 45,00</span>
             <button class="btn-pedido">Pedir Agora</button>
           </article>
 
-          <article class="card" id="card-nhoque">
+          <article class="card">
             <img src="src/images/nhoque.png" alt="Nhoque Tech" />
             <h3>Nhoque ao Pesto</h3>
             <p class="desc">Batata fresca e manjericão orgânico.</p>
@@ -82,7 +89,6 @@
         </div>
       </section>
     </main>
-
     <footer id="rodape">
       <div class="info-footer">
         <p><strong>TechFood 2026</strong></p>
@@ -90,7 +96,9 @@
         <p>Av. das Nações, 1500</p>
       </div>
     </footer>
-    <!-- <script src="src/scripts/aula4.js"></script> -->
-     <script src="src/scripts/novo.js"></script>
+   <!-- <script src="src/scripts/antigo.js"></script>
+    <script src="src/scripts/novo.js"></script>-->
+    <script src="src/scripts/aula06.js"></script>
+
   </body>
 </html>

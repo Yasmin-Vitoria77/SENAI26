@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Exemplo03 from './jsx_examples/03_condicionais_jsx';
+//import ViewExample01 from './view_examples/scaffold.js';
+// import ViewExample03 from './exercicios2/exercicio2.js';
+// import Lista01 from './jsx_examples/exercicios_yasmin/Lista01.js';
+import ViewExample03 from './exercicios2/exercicio2.js';
+//import ViewExample02 from './view_examples/scaffold01.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Exemplo03/>
+      <ViewExample03/>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,7 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#3bd081',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   }

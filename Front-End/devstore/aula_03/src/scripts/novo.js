@@ -21,12 +21,17 @@ if (tituloNhoque){
 
 const saudacao = document.querySelector('#boas-vindas')
 
+//Alterando imagem a baixo
+const imagem_card_um = document.querySelector('#foto-destaque')
+
 const agora = new Date()
 const hora = agora.getHours()
 
 saudacao.textContent = hora < 18 ? "bem vindo,bom almoço" : "Bem vindo, boa janta"
 
-nomeCompleto.innerHTML = "<strong>Yasmin</strong> Vitória do Nascimento Ramos"
+nomeCompleto.innerHTML = "<strong>Yasmin</strong>  <em>Vitória</em> do Nascimento Ramos"
+
+imagem_card_um.src = 'esgotado.jpg'
 
 const foto = document.querySelector('#foto-destaque')
 
