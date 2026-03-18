@@ -4,10 +4,10 @@ from utime import sleep
 botao_down = Pin(15, Pin.IN)
 led = Pin(14, Pin.OUT)
 
-while True:p
+while True:
     leitura_botao = botao_down.value()
     
-    if leitura_botao == 0:
+    if leitura_botao == 1:
         led.on()
         print(leitura_botao)
     else:
