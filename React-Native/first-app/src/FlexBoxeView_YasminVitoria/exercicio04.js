@@ -1,25 +1,23 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function ExercicioView01() {
-  return (
-    <View style={styles.container}></View>;
-    <Text style={styles.titulo}>Exercício 1</Text>
-    
-          <View style={styles.exemplo}>
-            <View style={{ flexDirection: "column", gap: 8}}>
-              <View style={styles.box}>
-                <Text>Vermelho</Text>
-              </View>
-              <View style={styles.box2}>
-                <Text>Azul</Text>
-              </View>
-              <View style={styles.box3}>
-                <Text>Verde</Text>
-              </View>
-            </View>
-          </View>
+export default function ExercicioView04() {
+  return <View style={styles.container}>
+    <View
+        style={{
+            flexDirection: 'center',
+            gap: 8,
+            height: 80,
+            width: 80,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+        <View style={styles.yellowBox}>
+          <Text style={styles.textStyle}>Centro</Text>
+        </View>
+        </View>
     </View>
-  );
+  
 }
 
 const styles = StyleSheet.create({
@@ -55,4 +53,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  yellowBox: {
+    height: 120,
+    width: 120,
+    backgroundColor: "#ffda03",
+    alignItems: "center",
+    justifyContent: "center",    
+  }
 });
