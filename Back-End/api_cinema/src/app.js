@@ -467,5 +467,5 @@ app.post('/sessoes', async (req, res) =>{
         }
         if(typeof filme_id || sala_id || preco !== 'number')
     }
-})
+});
 module.exports= app
