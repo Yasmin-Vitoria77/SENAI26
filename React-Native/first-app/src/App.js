@@ -12,12 +12,13 @@ import { StyleSheet, Text, View } from 'react-native';
 // import ExercicioView04 from './exercicios2/exercicio04.js';
 // import ExercicioView05 from './exercicios2/exercicio05.js';
 // import ExercicioView06 from './exercicios2/exercicio06.js';
-import ExercicioView07 from './FlexBoxeView_YasminVitoria/exercicio07.js';
+// import ExercicioSomativa1 from './Somativa/ex1.js';
+//import ExercicioSomativa2 from './Somativa/ex2.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ExercicioView07/>
+      <ExercicioSomativa2/>
       <StatusBar style="auto" />
     </View>
   );
