@@ -21,3 +21,25 @@ online.textContent = "Status: Online"
 // Skills
 const skillsTotais = document.querySelectorAll('.skill')
 console.log("Total de skills: ", skillsTotais.length)
+
+// MUDAR FOTO - MODERNO
+// MODERNO: Lendo o caminho atual (Direto na propriedade)
+// const caminhoAtual = foto.src;
+
+// MODERNO: Trocando a imagem (Igual a mudar o valor de uma variável)
+//foto.src = 'img/esgotado.png';
+
+// MODERNO: Alterando o texto de acessibilidade
+//foto.alt = 'Prato não disponível'
+
+//MUDAR FOTO - ANTIGO
+//const foto = document.querySelector('#foto-prato');
+// COMO: Lendo o caminho atual da imagem
+//const caminhoAtual = foto.getAttribute('src');
+
+// COMO: Trocando a imagem para "esgotado" dinamicamente
+//foto.setAttribute('src', 'img/esgotado.png');
+
+// COMO: Alterando o texto de acessibilidade
+//foto.setAttribute('alt', 'Prato não disponível');
+//const foto = document.querySelector('#foto-prato');
