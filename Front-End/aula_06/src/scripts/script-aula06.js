@@ -20,40 +20,40 @@ caixa.addEventListener('mouseout', () => {
     caixa.style.backgroundColor = 'grey';
 })
 
-// 1º Exercício - adicionar curtida
-// const clique = document.querySelector ('#contador')
-// const contador = document.querySelector ('#btn-pedir')
+//1º Exercício - adicionar curtida
+const clique = document.querySelector ('#contador')
+const contador = document.querySelector ('#btn-pedir')
 
-// If (contador && clique) {
-//            let contagem = 0
-//             contador.addEventListener('click', function () {
-//                         contagem++
-//                         clique.textContent - `${contagem}`
-//              })
-// }
+if (contador && clique){
+           let contagem = 0
+            contador.addEventListener('click', function () {
+                        contagem++
+                        clique.textContent - `${contagem}`
+             })
+}
 // contagem++ → contagem = contagem + 1
 
 
-// Formulario input
-// const qtd = document.querySelector('#qtd-item');
-// const totalTxt = document.querySelector('#total');
+//Formulario input
+const qtd = document.querySelector('#qtd-item');
+const totalTxt = document.querySelector('#total');
 
-// // ONDE: Calcular o preço enquanto o usuário muda a quantidade
-// qtd.addEventListener('input', () => {
-// // Conversão obrigatória (Aula 5)
-// const valor = Number(qtd.value) * 45.00;
+// Calcular preço enquanto o usuário muda a quantidade
+qtd.addEventListener('input', () => {
+// Conversão
+const valor = Number(qtd.value) * 45.00;
 
-// // Atualizando o texto na tela
-// totalTxt.textContent = `Total: R$ ${valor.toFixed(2)}`
-// ;
+// Atualizando o texto na tela
+totalTxt.textContent = `Total: R$ ${valor.toFixed(2)}`
+;
 
-// });
+});
 
-// Troca texto
-// const inputNome = document.querySelector('#campo-nome');
-// // ONDE: Pegar o valor a cada letra digitada
-// inputNome.addEventListener('keyup', () => {
-// // COMO: O .value (Aula 5) captura o texto atual após a tecla subir
-// let texto = inputNome.value;
-// console.log("O usuário está digitando: " + texto);
-// });
+//Troca texto
+const inputNome = document.querySelector('#campo-nome');
+// Pega o valor a cada letra digitada
+inputNome.addEventListener('keyup', () => {
+// O .value captura o texto atual após tecla subir
+let texto = inputNome.value;
+console.log("O usuário está digitando: " + texto);
+});
