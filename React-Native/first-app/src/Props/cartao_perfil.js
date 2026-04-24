@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         padding: 16,
         borderWidth: 1,
-        borderColor: '#e5e7eb',
+        borderColor: '#e6e7eb',
     },
     nome: {
         fontSize: 18,

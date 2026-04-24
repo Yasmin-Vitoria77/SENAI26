@@ -1,11 +1,14 @@
 
 import { StyleSheet, Text, View } from "react-native";
-import  CartaoPerfil  from "./Props/cartao_perfil";
-import CardProduto from "./Props/Exercicios/exercicio1"
-import CartaoUsuario from "./Props/Exercicios/exercicio2";
-import Saudacao from "./Props/Exercicios/exercicio3";
-import PerfilAluno from "./Props/Exercicios/exercicio4";
-import Botao from "./Props/Exercicios/desafio";
+// import  CartaoPerfil  from "./Props/cartao_perfil";
+// import CardProduto from "./Props/Exercicios/exercicio1"
+// import CartaoUsuario from "./Props/Exercicios/exercicio2";
+// import Saudacao from "./Props/Exercicios/exercicio3";
+// import PerfilAluno from "./Props/Exercicios/exercicio4";
+// import Botao from "./Props/Exercicios/desafio";
+// import ContadorExample from "./hooks/useState_example";
+import TelaMoeda from "./Hooks/useEffect_example";
+// import TelaLogin from "./Hooks/useRef_example";
 
 export default function App() {
   return (
@@ -26,6 +29,7 @@ export default function App() {
       {/* <Botao titulo="Entrar"/>
       <Botao titulo="Sair"/>
       <Botao titulo="Cadastrar"/> */}
+      <TelaMoeda/>
     </View>
   );
 }
