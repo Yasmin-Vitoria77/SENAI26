@@ -199,7 +199,7 @@ app.delete('/produtos/:id', async (req, res) => {
         console.error('Erro ao deletar produto: ', erro)
         res.status(500).json({
             sucesso: false,
-            mensagem: "Errpo ao apagar produto",
+            mensagem: "Erro ao apagar produto",
             erro: erro.message
         })
     }
