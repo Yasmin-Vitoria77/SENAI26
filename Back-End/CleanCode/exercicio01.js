@@ -14,7 +14,7 @@ const validarExistencia = (resultado, res, tipo) => {
 
 app.get('/usuarios', async (req, res) => {
     try{
-        const buscarUsuario = await queryAsync('SELECT *FROM usuarios')
+        const buscarUsuario = await queryAsync('SELECT * FROM usuarios')
         res.status(200).json({
             sucesso: true,
             dados: buscarUsuario,
@@ -44,7 +44,7 @@ app.get('/usuarios/:id', async (req, res) => {
      
     } catch (erro){
         res.status(500).json({
-            secusso: false,
+            sucesso: false,
             mensagem: "Erro ao procurar usuário por ID"
         })
     }
@@ -57,7 +57,7 @@ const validarDados = ({cliente, valor}) => {
         return "Cliente e valor são obrigatórios"
     }
 
-    if(typeof valor !== "Number" || valor <= 0){    // verifica o tipo de variável
+    if(typeof valor !== "number" || valor <= 0){    // verifica o tipo de variável
         return "Valor inválido"
     }
 
@@ -86,7 +86,7 @@ app.post('/pedidos', async (req, res) => {
     } catch (erro){
         res.status(500).json({
             sucesso: false,
-            mensagem: "Erro ao registrar nova sala"
+            mensagem: "Erro ao registrar novo pedido"
         })
     }
 })
@@ -99,9 +99,9 @@ app.put('/salas/:id', async (req, res) => {
         const {id} = req.params
         const dados = req.body
 
-        const sala = await queryAsync ("SELECT * FROM salas WHERE ID = ?", [id])
+        const sala = await queryAsync ("SELECT * FROM sala WHERE ID = ?", [id])
         //essas infromações sairam lá de cima - reaproveitando função
-        if(validarExistencia(sala, res, "Sala")){   
+        if(!validarExistencia(sala, res, "Sala")){   
             return 
         } 
         //verificar as chaves(cliente, valor) dentro de um objeto - se salvou nada dentro de DADOS, se estão preenchidos ou não 
