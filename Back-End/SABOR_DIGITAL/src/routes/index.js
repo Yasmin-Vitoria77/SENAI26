@@ -11,4 +11,4 @@ router.get('/', (req, res) => {
     })
 })
 
-router.use('/prodtos', produtoRoutes)
+router.use('/produtos', produtoRoutes)

@@ -7,7 +7,29 @@ document.addEventListener("DOMContentLoaded", function (){
 })
 
 function inicializarSubtotal(){
+const inputQtd = document.querySelector("#qtd-lasanha");
+  const precoTexto = document.querySelector("#preco-lasanha");
+  const subTexto = document.querySelector("#sub-lasanha");
 
+  if (!inputQtd || !precoTexto) return;
+
+  inputQtd.addEventListener("input", function () {
+    const precoUnitario = 45.0;
+    const quantidade = Number(inputQtd.value);
+
+    if (isNaN(quantidade) || quantidade < 1) return;
+
+    const total = quantidade * precoUnitario;
+    precoTexto.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
+    precoTexto.style.color = total > 150 ? "#c0392b" : "#e67e22";
+
+    if (subTexto) {
+      subTexto.textContent =
+        quantidade > 1
+          ? `${quantidade}x R$ ${precoUnitario.toFixed(2).replace(".", ",")}`
+          : "";
+    }
+  });
 }
 
 
@@ -25,10 +47,9 @@ function inicializarHoverCards(){
 });
 }
 
-
 function inicializarVitrine(){
     const main = document.querySelector("main")
-main.addEventListener("click", (event) =>{
+    main.addEventListener("click", (event) =>{
     //vai pegar o cara que fez a ação de clique e vai guardar a informação
     const clicado = event.target
 
@@ -36,7 +57,7 @@ main.addEventListener("click", (event) =>{
         const box = clicado.parentElement
         const spanQtd = box.querySelector(".qtd-valor")
         const valorAtual = Number(spanQtd.textContent)
-        spanQtd.textContent = Math.max(1, valorAtual - 1)
+        spanQtd.textContent = Math.max(1, Number(spanQtd.textContent) - 1)
         atualizarPrecoCard(box)
         return
     }
@@ -54,7 +75,7 @@ main.addEventListener("click", (event) =>{
         event.preventDefault()
         const card = clicado.parentElement
         const nomePrato = card.querySelector("h3").textContent
-        const quantidade = card.querySelector(".qtd-valor").textContent
+        const quantidade = Number(card.querySelector(".qtd-valor").textContent)
         const precoExibido = card.querySelector(".preco").textContent
 
         clicado.textContent = "Adicionado ✓"
@@ -74,18 +95,69 @@ main.addEventListener("click", (event) =>{
             }
         }, 1500)
 
+        const badgeExistente = card.querySelector(".badge-adicionado");
 
+        if (badgeExistente) badgeExistente.remove();
 
-        if(!card.querySelector(".badge-adicionado")){
-            card.insertAdjacentHTML(
-                "beforeend",
-                "<span class=`badge-adicionado`> No resumo ✓</span>"
-            )
-        }
+        card.insertAdjacentHTML(
+            "beforeend",
+            "<span class='badge-adicionado'> Em Meus Pedidos</span>"
+        );
+        
+        setTimeout(function(){
+            const badge = card.querySelector(".badge-adicionado")
+            if(badge) badge.remove()
+        }, 2000); //dois segundos - milisegundos
 
         //Função  para inserir as informações do prato no "carrinho"
-        adicionarItemAoResumo(nomePrato, quantidade, precoExibido, card)
-
+        //Função que enviará as informações ao WebStorage
+        salvarPedido({nome: nomePrato, preco: precoExibido, qtd: quantidade});
+        atualizarContadorPedidos();
     }
-})
+});
+}
+
+function atualizarPrecoCard(box){
+     const card = box.parentElement
+     const spanPreco = card.querySelector(".preco")
+     const precoUnitario = parseFloat(spanPreco.getAttribute("data-preco"))
+     const quantidade = Number(box.querySelector(".qtd-valor").textContent)
+     const total = precoUnitario * quantidade
+
+     spanPreco.textContent = "R$" + total.toFixed(2).replace(".",",") // substituo PONTO por VÍRGULA
+     spanPreco.style.color = total > 150 ? "#c0392b":"#e67e22"
+}
+
+function salvarPedido(pedido){
+    const lista = JSON.parse(localStorage.getItem("techfood_pedidos") || "[]")
+
+    pedido.subtotal = pedido.preco * pedido.qtd
+    lista.push(pedido)
+
+    localStorage.setItem("techfood_pedidos", JSON.stringify(lista))//stringify envia pro localstorage
+}
+
+function atualizarContadorPedidos(){
+    const lista = JSON.parse(localStorage.getItem("techfood_pedidos") || "[]")
+    //Contador de itens do localStorage
+    const total = lista.reduce(function(acc, p){return acc + p.qtd}, 0)//reduce = início sempre 0
+
+    const linkMenu = document.querySelector("#menu a[href='pedidos.html']")
+
+    if(!linkMenu) return
+
+    let badge = linkMenu.querySelector(".badge-menu")
+
+    if(!badge){
+        linkMenu.insertAdjacentHTML("beforeend", "<span class='badge-menu'>0</span>")
+
+        badge = linkMenu.querySelector(".badge-menu")
+    }
+    //Inserir o valor do contador
+    badge.textContent = total
+    linkMenu.classList.add("menu-ativo")
+}
+
+function exibirLinkPedidos(){
+    //Continua...
 }
