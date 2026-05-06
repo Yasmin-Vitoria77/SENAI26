@@ -1,9 +1,16 @@
+//papel do APP.JS = controlar as rotas(-> interação com o front end)
+
 const express = require('express')
-const pool = require('./config/database')
+//const pool = require('./config/database')
+const routes= require('./routes')
 
 const app= express()
 
 app.use(express.json())
+
+app.use('/', routes)//centralizando requisições para a pasta de routes
+
+module.exports = app
 
 const queryAsync = (sql, values = []) => {
     return new Promise((resolve, reject) =>{
