@@ -1,4 +1,3 @@
-
 import { StyleSheet, Text, View } from "react-native";
 // import  CartaoPerfil  from "./Props/cartao_perfil";
 // import CardProduto from "./Props/Exercicios/exercicio1"
@@ -7,7 +6,9 @@ import { StyleSheet, Text, View } from "react-native";
 // import PerfilAluno from "./Props/Exercicios/exercicio4";
 // import Botao from "./Props/Exercicios/desafio";
 // import ContadorExample from "./hooks/useState_example";
-import TelaMoeda from "./Hooks/useEffect_example";
+//import TelaMoeda from "./Hooks/useEffect_example";
+//import FormularioExemplo from "./text_input/formulario";
+import FlatListExemplo from "./flatlist/flatlist";
 // import TelaLogin from "./Hooks/useRef_example";
 
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
       {/* <Botao titulo="Entrar"/>
       <Botao titulo="Sair"/>
       <Botao titulo="Cadastrar"/> */}
-      <TelaMoeda/>
+      <FlatListExemplo/>
     </View>
   );
 }
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffffff",
-    justifyContent: "center",
-    alignItems: "center", //deixo pequenininho
+    //justifyContent: "center",
+    //alignItems: "center", //deixo pequenininho
   },
 });
