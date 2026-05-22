@@ -1,4 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer} from "@react-navigation/native"
+
 // import  CartaoPerfil  from "./Props/cartao_perfil";
 // import CardProduto from "./Props/Exercicios/exercicio1"
 // import CartaoUsuario from "./Props/Exercicios/exercicio2";
@@ -8,30 +10,15 @@ import { StyleSheet, Text, View } from "react-native";
 // import ContadorExample from "./hooks/useState_example";
 //import TelaMoeda from "./Hooks/useEffect_example";
 //import FormularioExemplo from "./text_input/formulario";
-import FlatListExemplo from "./flatlist/flatlist";
+//import StackNavigator from "./navigation/stack_navigation";
+import BottomTabNavigator from "./navigation/bottom_tab_navigation";
 // import TelaLogin from "./Hooks/useRef_example";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <CartaoPerfil nome="Daniel" idade={22} />
-      <CartaoPerfil nome="Marlon" idade={25} />
-      <CartaoPerfil nome="Celso" idade={37} /> */}
-
-      {/* <CardProduto produto="Abóbora" preco={15.00}/> */}
-
-      {/* <CartaoUsuario nome="Yasmin" email="minauthentica@gmail.com"/> */}
-
-      {/* <Saudacao nome="Gabi"/>
-      <Saudacao nome="Henrique"/>
-      <Saudacao nome="Pamela"/> */}
-
-      {/* <PerfilAluno nome="Carlos" turma="DS-2025" id="00123"/> */}
-      {/* <Botao titulo="Entrar"/>
-      <Botao titulo="Sair"/>
-      <Botao titulo="Cadastrar"/> */}
-      <FlatListExemplo/>
-    </View>
+    <NavigationContainer>
+      <BottomTabNavigator/>
+    </NavigationContainer>
   );
 }
 
