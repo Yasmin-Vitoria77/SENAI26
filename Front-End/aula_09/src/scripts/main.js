@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function (){
 
-    inicializarSubtotal()
-    inicializarHoverCards()
-    inicializarVitrine()
+    renderizarCardapio();
+ // inicializarSubtotal();
+    inicializarHoverCards();
+    inicializarVitrine();
 
 })
 
+// Foi inserida dentro do renderizar cardápio - que pega dos dados do banco, por isso é async
+/*
 function inicializarSubtotal(){
 const inputQtd = document.querySelector("#qtd-lasanha");
   const precoTexto = document.querySelector("#preco-lasanha");
@@ -30,6 +33,44 @@ const inputQtd = document.querySelector("#qtd-lasanha");
           : "";
     }
   });
+}
+*/
+
+async function renderizarCardapio(){
+    const grid = document.getElementById("#grid-cardapio")
+
+    if(!grid) return
+
+    grid.innerHTML = "<p class='loading'> Carregando cardápio... </p>"
+
+    try{
+        const produtos = await buscarProdutos()
+        grid.innerHTML = ""
+
+        produtos.forEach(function(produto){
+            const card = document.createElement("article")
+            card.classList.add("card")
+            card.setAttribute("data-id", produto.id)
+
+            card.innerHTML = 
+            `<h3>${produto.nome}</h3>` +
+            `<p class='desc'>${produto.descricao}</p>` +
+            `<div class='quantidade-box'>`+
+              `<button class='btn-qtd btn menos'>-</button>` +
+              `<span class='qtd-valor'>1</span>` 
+              `<button class='btn-qtd btn menos'>-</button>` + 
+            `</div>` +
+            `<span class='preco' data-preco='${produto.preco}'>` +
+              `R$ ${parseFloat(produto.preco).toFixed(2).replace(".",",")}` +
+            `</span>` +
+            `<button class='btn-pedido> Pedir Agora</button>`
+
+            grid.appendChild(card) // insere no HTML os filhos
+        })
+
+    } catch(error){
+        grid.innerHTML = "<p class='loading erro'> Erro ao carregar o cardápio. Verifique se o servidor está rodando </p>"
+    }
 }
 
 
@@ -73,45 +114,14 @@ function inicializarVitrine(){
     // Solicitar pedido - Item
     if(clicado.classList.contains("btn-pedido")){
         event.preventDefault()
+
         const card = clicado.parentElement
-        const nomePrato = card.querySelector("h3").textContent
-        const quantidade = Number(card.querySelector(".qtd-valor").textContent)
-        const precoExibido = parseFloat(card.querySelector((".preco")).getAttribute("data-preco"))
 
-        clicado.textContent = "Adicionado ✓"
-        clicado.style.backgroundColor = "#27ae60"
-        clicado.disabled = true
-
-        setTimeout(() => {
-            clicado.textContent = "Pedir agora"
-            clicado.style.backgroundColor = ""
-            clicado.disabled = false
-
-            const box = card.querySelector(".quantidade-box")
-            if(box){
-                const spanQtd = box.querySelector(".qtd-valor")
-                if(spanQtd >0) spanQtd.textContent = "1"
-                atualizarPrecoCard(box)
-            }
-        }, 1500)
-
-        const badgeExistente = card.querySelector(".badge-adicionado");
-
-        if (badgeExistente) badgeExistente.remove();
-
-        card.insertAdjacentHTML(
-            "beforeend",
-            "<span class='badge-adicionado'> Em Meus Pedidos</span>"
-        );
-        
-        setTimeout(function(){
-            const badge = card.querySelector(".badge-adicionado")
-            if(badge) badge.remove()
-        }, 2000); //dois segundos - milisegundos
+        // Falta duas linhas
 
         //Função  para inserir as informações do prato no "carrinho"
         //Função que enviará as informações ao WebStorage
-        salvarPedido({nome: nomePrato, preco: precoExibido, qtd: quantidade});
+        salvarPedido(produtoId, quantidade, clicado);
         atualizarContadorPedidos();
     }
 });
