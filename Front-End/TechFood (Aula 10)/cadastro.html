@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="PT-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,12 +20,61 @@
 
       <nav id="menu">
         <ul>
-          <li><a href="#grid-cardapio">Cardápio</a></li>
+          <li><a href="index.html">Cardápio</a></li>
           <li><a href="pedidos.html">Meus Pedidos</a></li>
           <li><a href="cadastro.html">Cadastrar Prato</a></li>
         </ul>
       </nav>
     </header>
+    <main>
+        <form id="cadastro-produto">
+        <section id="cadastrar-produto">
+            <h2 id="titulo">Adicione informações do produto</h2>
+            <p id="textinho">Complete todas as informações para conclusão de cadastro do produto</p>
+
+            <div id="campo-nome">
+                <label for="nome-prato"><strong>Nome: </strong></label>
+                <input type="text" id="nome-prato" name="nome-prato" required>
+            </div>
+            <div id="campo-descricao">
+                <label for="descricao-prato"><strong>Descrição: </strong></label>
+                <input type="text" id="descricao-prato" name="descricao-prato" required>
+            </div>
+            <div id="campo-preco">
+                <label for="preco-prato"><strong>Preço: </strong></label>
+                <input type="text" id="descricao-prato" name="descricao-prato" required>
+            </div>
+            <div id="campo-categoria">
+                <label for="descricao-prato"><strong>Categoria: </strong> </label>
+
+                <label>
+                <input type="radio" name="massas" value="massas">Massas
+                </label>
+                <input type="radio" name="bebidas" value="bebidas">Bebidas
+                </label>
+                <!-- <label>
+                <input type="radio" name="sobremesas" value="sobremesas"> Sobremesas
+                </label> -->
+            </div>
+            <div id="campo-imagem">
+                <label for="imagem-prato"><strong>Imagem do prato: </strong> </label>
+                <input type="file" id="imagem-prato" name="imagem-prato" required>
+            </div>
+            <div id="btn-confirmar">
+            <button id="confirmacao" type="submit">Registrar prato</button>
+            </div>
+        </section>
+        </form>
+    </main>
+
+    <footer id="rodape">
+      <div class="info-footer">
+        <p><strong>TechFood 2026</strong></p>
+        <p>Escola SENAI Ítalo Bologna - Itu/SP</p>
+        <p>Av. das Nações, 1500</p>
+      </div>
+      <p id="data-hora-footer"></p>
+    </footer>
 
     <script src="src/scripts/global.js"></script>
     <script src="src/scripts/api.js"></script>

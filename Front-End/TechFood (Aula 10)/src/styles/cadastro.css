@@ -1,0 +1,28 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+#cadastro-produto {
+    padding: 20px;
+}
+
+#titulo {
+    text-align: center;
+}
+
+#textinho {
+    margin-bottom: 10px ;
+    text-align: center;
+}
+
+#confirmacao {
+    background-color:  #e67e22;
+    text-align: center;
+    padding: 6px;
+    border-radius: 6.7px;
+}
+
+#btn-confirmar {
+    text-align: center;
+}
