@@ -1,0 +1,665 @@
+/* ================= Variaveis de Cores ================= */
+:root {
+  --pink-primary: #ff4d85;
+  --pink-light: #ffe4e6;
+  --teal-primary: #00d2b4;
+  --teal-light: #e6fcf8;
+  --gold-border: #d9a05b;
+  --bg-body: #ffffff;
+  --bg-card: #ffffff;
+  --bg-box: #f8fafc;
+  --text-dark: #1c2434;
+  --text-gray: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #f1f5f9;
+  --border-card: #e2e8f0;
+
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* ================= Reset e Setup Base ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  border-top: 4px solid #1e40af; /* Borda superior sutil da janela */
+}
+
+/* ================= Cabeçalho (Header) ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-area h1 {
+  font-family: var(--font-heading);
+  color: var(--pink-primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.status-badge {
+  background-color: var(--teal-light);
+  color: var(--teal-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+}
+
+.status-badge .dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--teal-primary);
+  border-radius: 50%;
+}
+
+.header-actions i {
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.header-actions i:hover {
+  color: var(--text-dark);
+}
+
+/* ================= Layout Principal ================= */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 55% 43%;
+  gap: 2%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+}
+
+/* ================= Coluna Esquerda ================= */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Jogo Atual */
+.current-game-card {
+  border: 2px solid var(--pink-primary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(255, 77, 133, 0.05);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.team {
+  text-align: center;
+}
+.team h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.team .score {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.team-green {
+  color: var(--teal-primary);
+}
+.team-red {
+  color: var(--pink-primary);
+}
+
+.vs-text {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--border-card);
+}
+
+.waiting-badge {
+  background-color: var(--pink-light);
+  color: var(--pink-primary);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 1.5rem;
+}
+
+/* Jogos Recentes */
+.recent-games-card {
+  background: var(--bg-body);
+  border-radius: 12px;
+  padding: 1rem 0;
+}
+
+.recent-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-table th {
+  text-align: left;
+  color: var(--text-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.recent-table td {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.recent-table td:first-child {
+  color: var(--text-light);
+}
+.recent-table th:last-child,
+.recent-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Dados Semanais */
+.weekly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.weekly-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-body);
+}
+
+.w-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 30%;
+}
+
+.w-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.w-icon.teal {
+  background: var(--teal-light);
+  color: var(--teal-primary);
+}
+.w-icon.pink {
+  background: var(--pink-light);
+  color: var(--pink-primary);
+}
+
+.w-date .day {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+.w-date .details {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.w-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.score-box {
+  background: var(--bg-box);
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.score-box span.vs {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  margin: 0 0.5rem;
+}
+.score-result {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.w-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.w-duration i {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+}
+
+.w-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: right;
+  width: 25%;
+  justify-content: flex-end;
+}
+.p-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+.p-stats {
+  font-size: 0.65rem;
+  color: var(--gold-border);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ================= Coluna Direita ================= */
+.right-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.rc-card {
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--bg-card);
+}
+
+.rc-card.border-gold {
+  border: 2px solid var(--gold-border);
+}
+.rc-card.border-teal {
+  border: 2px solid var(--teal-primary);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+.card-header i {
+  font-size: 1.2rem;
+}
+.card-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Estatísticas de Jogo */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.stat-box {
+  background: var(--bg-box);
+  padding: 1.2rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.stat-box .label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+.stat-box .value {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+.stat-box .value.teal-text {
+  color: var(--teal-primary);
+  font-size: 1.1rem;
+}
+
+/* Menu Rápido */
+.menu-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-gray);
+  transition: all 0.2s;
+}
+.menu-btn:hover {
+  background: var(--bg-box);
+  transform:translateY(-2px);
+}
+
+.menu-btn i {
+  font-size: 1rem;
+}
+.menu-btn.filled {
+  background: var(--teal-light);
+  color: var(--teal-primary);
+  border: none;
+  margin-bottom: 0;
+}
+
+.menu-btn.filled:hover {
+  transform:translateY(-2px);
+}
+
+/* Monitoramento */
+.sensor-box {
+  background: var(--bg-box);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.sensor-box:last-child {
+  margin-bottom: 0;
+}
+.sensor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.s-type {
+  font-size: 0.65rem;
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.s-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.badge.active {
+  background: var(--teal-light);
+  color: var(--teal-primary);
+}
+.badge.inactive {
+  background: var(--border-color);
+  color: var(--text-light);
+}
+
+/* Atuadores do Sistema */
+.actuator-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.a-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+.a-value {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.actuator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.a-box {
+  background: var(--bg-box);
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+.btn-trigger {
+  background: var(--pink-light);
+  color: var(--pink-primary);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.btn-trigger:hover {
+    transform:translateY(-2px);
+}
+
+.display-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-box);
+  border-radius: 6px;
+  color: var(--text-gray);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* Toggle Switch CSS */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.toggle-container span {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--teal-primary);
+  border-radius: 34px;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+  transform: translateX(18px);
+}
+
+/* Bottom Small Cards */
+.small-card {
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sc-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+.sc-icon {
+  font-size: 1.2rem;
+}
+.sc-value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+/* Helpers de Cor */
+.text-pink {
+  color: var(--pink-primary);
+}
+.text-teal {
+  color: var(--teal-primary);
+}
+.text-gold {
+  color: var(--gold-border);
+}
+
+/* ================= Rodapé (Footer) ================= */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2rem;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-links span {
+  cursor: pointer;
+}
+.footer-links span:hover {
+  color: var(--text-dark);
+}
