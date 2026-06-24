@@ -25,7 +25,7 @@ export default function TelaLogin() {
        />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

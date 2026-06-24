@@ -14,7 +14,9 @@ export default function ContadorExample() {
       </TouchableOpacity>
     </View>
   );
-}
+};
+
+
 
 const styles = StyleSheet.create({
   container: {
