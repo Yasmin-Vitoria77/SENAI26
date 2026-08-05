@@ -1,71 +1,72 @@
-const ProdutoService = require('../services/ProdutoController') //tô saindo do diretório -> "." = no mesmo diretório
+const ProdutoService = require('../services/ProdutoService');
 
-class ProdutoController{
-    async listar(req, res){
-        try{
-            const resultado = await ProdutoService.listarProdutos()
-            res.json(resultado)
-        } catch(error){
-            res.status(500).json({
+class ProdutoController {
+    async listar(req, res) {
+        try {
+            const resultado = await ProdutoService.listarProdutos();
+            res.json(resultado);
+        } catch (erro) {
+            res.status(erro.status || 500).json({
                 sucesso: false,
-                mensagem: error.mensagem || "Erro interno do servidor",
-                erro: erro
-            })
+                mensagem: erro.mensagem || "Erro interno do servidor",
+                erro: erro.stack || erro
+            });
         }
     }
 
-    async buscarPorId(req, res){
-        try{
-            const resultado = await ProdutoService.buscarProdutoPorId(req.params.id)
-            res.json(resultado)
-
-        } catch(erro){
-            res.status(500).json({
+    async buscarPorId(req, res) {
+        try {
+            const resultado = await ProdutoService.buscarProdutoPorId(req.params.id);
+            res.json(resultado);
+        } catch (erro) {
+            res.status(erro.status || 500).json({
                 sucesso: false,
-                mensagem: error.mensagem || "Erro interno do servidor",
-                erro: erro
-            })
+                mensagem: erro.mensagem || "Erro interno do servidor",
+                erro: erro.stack || erro
+            });
         }
     }
 
-    async cadastrar(req, res){
-        try{
-            const resultado = await ProdutoService.cadastrarProduto(req.body)//mandando infromção de quem tá sendo atualizado
-            res.status(201).json(resultado)
-        } catch(erro){
-            res.status(500).json({
+    async cadastrar(req, res) {
+        try {
+            const dados = { ...req.body, file: req.file };
+            const resultado = await ProdutoService.cadastrarProduto(dados);
+            res.status(201).json(resultado);
+        } catch (erro) {
+            res.status(erro.status || 500).json({
                 sucesso: false,
-                mensagem: error.mensagem || "Erro interno do servidor",
-                erro: erro
-            })
+                mensagem: erro.mensagem || "Erro interno do servidor",
+                erro: erro.stack || erro
+            });
         }
     }
 
-    async atualizar(req, res){
-        try{
-            const resultado = await ProdutoService.atualizaProduto(req.params.id, req.body)
-            res.status(200).json(resultado)
-        } catch(erro){
-            res.status(500).json({
+    async atualizar(req, res) {
+        try {
+            const dados = { ...req.body, file: req.file };
+            const resultado = await ProdutoService.atualizarProduto(req.params.id, dados);
+            res.json(resultado);
+        } catch (erro) {
+            res.status(erro.status || 500).json({
                 sucesso: false,
-                mensagem: error.mensagem || "Erro interno do servidor",
-                erro: erro
-            })
+                mensagem: erro.mensagem || "Erro interno do servidor",
+                erro: erro.stack || erro
+            });
         }
     }
 
-    async deletar(req, res){
-        try{
-            const resultado = await ProdutoService.deletarProduto(req.params.id)
-            res.status(200).json(resultado)
-        } catch (erro){
-            res.status(500).json({
+    async deletar(req, res) {
+        try {
+            const resultado = await ProdutoService.deletarProduto(req.params.id);
+            res.json(resultado);
+        } catch (erro) {
+            res.status(erro.status || 500).json({
                 sucesso: false,
-                mensagem: error.mensagem || "Erro interno do servidor",
-                erro: erro
-            })
+                mensagem: erro.mensagem || "Erro interno do servidor",
+                erro: erro.stack || erro
+            });
         }
     }
 }
-module.exports = new ProdutoController()//mandando classe inteira
-//tá mandando resposta pro Service
+
+module.exports = new ProdutoController();
