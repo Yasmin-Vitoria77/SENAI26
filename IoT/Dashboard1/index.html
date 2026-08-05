@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -316,4 +317,324 @@
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
     <script src="src/scripts/script.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pebolim IoT - Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Smart Pebolim IoT</h1>
+            <div class="status-badge">
+                <div class="dot"></div>
+                SISTEMA ONLINE
+            </div>
+        </div>
+        <div class="header-actions">
+            <!-- <i class="fas fa-cog"></i> -->
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <div class="left-column">
+            
+            <section>
+                <h2 class="section-title">Jogo Atual</h2>
+                <div class="current-game-card">
+                    <div class="scoreboard">
+                        <div class="team team-green">
+                            <h4>TIME VERDE</h4>
+                            <div class="score">7</div>
+                        </div>
+                        <div class="vs-text">VS</div>
+                        <div class="team team-red">
+                            <h4>TIME VERMELHO</h4>
+                            <div class="score">4</div>
+                        </div>
+                    </div>
+                    <div class="waiting-badge">Aguardando Lançamento</div>
+                </div>
+            </section>
+
+            <section class="recent-games-card">
+                <h3 class="section-title" style="font-size: 1.2rem; margin-bottom: 1rem;">Jogos Recentes</h3>
+                <table class="recent-table">
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Detalhes</th>
+                            <th>Resultados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>14:22:05</td>
+                            <td>Batatinha - Ovelhas</td>
+                            <td>04 x 02</td>
+                        </tr>
+                        <tr>
+                            <td>14:18:12</td>
+                            <td>Time Azul - Time Vermelho</td>
+                            <td>06 x 07</td>
+                        </tr>
+                        <tr>
+                            <td>14:15:30</td>
+                            <td>Ararinhas - Abelhas</td>
+                            <td>10 x 06</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2 class="section-title">Dados Semanais</h2>
+                <div class="weekly-list">
+                    
+                    <div class="weekly-item">
+                        <div class="w-left">
+                            <div class="w-icon teal"><i class="fas fa-gamepad"></i></div>
+                            <div class="w-date">
+                                <div class="day">Out, 24</div>
+                                <div class="details">21:45 PM • MESA #04</div>
+                            </div>
+                        </div>
+                        <div class="w-score">
+                            <div class="score-box">
+                                <span class="text-teal">10</span> <span class="vs">vs</span> <span class="text-pink">08</span>
+                            </div>
+                            <div class="score-result text-teal">Vitória do Time Verde</div>
+                        </div>
+                        <div class="w-duration">
+                            <i class="far fa-clock"></i>
+                            <span>12m 45s</span>
+                        </div>
+                        <div class="w-player">
+                            <div>
+                                <div class="p-name">Banana_Striker</div>
+                                <div class="p-stats">7 Gols • 14 Bloqueios</div>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Avatar" class="avatar">
+                        </div>
+                    </div>
+
+                    <div class="weekly-item">
+                        <div class="w-left">
+                            <div class="w-icon pink"><i class="fas fa-flag"></i></div>
+                            <div class="w-date">
+                                <div class="day">Out, 24</div>
+                                <div class="details">18:12 PM • MESA #02</div>
+                            </div>
+                        </div>
+                        <div class="w-score">
+                            <div class="score-box">
+                                <span class="text-light">04</span> <span class="vs">vs</span> <span class="text-pink">10</span>
+                            </div>
+                            <div class="score-result text-pink">Vitória do Time Vermelho</div>
+                        </div>
+                        <div class="w-duration">
+                            <i class="far fa-clock"></i>
+                            <span>06m 22s</span>
+                        </div>
+                        <div class="w-player">
+                            <div>
+                                <div class="p-name">La_Moon</div>
+                                <div class="p-stats text-gold">8 Gols • 2 Bloqueios</div>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar">
+                        </div>
+                    </div>
+
+                    <div class="weekly-item">
+                        <div class="w-left">
+                            <div class="w-icon teal"><i class="fas fa-gamepad"></i></div>
+                            <div class="w-date">
+                                <div class="day">Out, 23</div>
+                                <div class="details">14:00 PM • TABLE #04</div>
+                            </div>
+                        </div>
+                        <div class="w-score">
+                            <div class="score-box">
+                                <span class="text-teal">10</span> <span class="vs">vs</span> <span class="text-light">09</span>
+                            </div>
+                            <div class="score-result text-teal">Vitória do Time Verde</div>
+                        </div>
+                        <div class="w-duration">
+                            <i class="far fa-clock"></i>
+                            <span>15m 10s</span>
+                        </div>
+                        <div class="w-player">
+                            <div>
+                                <div class="p-name">Boneca_Punk</div>
+                                <div class="p-stats text-gold">5 Gols • 22 Bloqueios</div>
+                            </div>
+                            <img src="https://i.pravatar.cc/150?img=13" alt="Avatar" class="avatar">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="right-column">
+            
+            <div class="rc-card border-gold">
+                <div class="card-header">
+                    <i class="fas fa-chart-simple text-gold"></i>
+                    <h3>Estatísticas de Jogo</h3>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="label">Duração</span>
+                        <span class="value">06:07</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Lançamentos</span>
+                        <span class="value">42</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Eficiência</span>
+                        <span class="value">67%</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">MV-Player</span>
+                        <span class="value teal-text">CyberStiker</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rc-card border-teal" style="display: flex; flex-direction: column;">
+                <div class="card-header">
+                    <h3>Menu Rápido</h3>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <button class="menu-btn">
+                        <i class="fas fa-sync-alt"></i> REINICIAR PARTIDA
+                    </button>
+                    <button class="menu-btn">
+                        <i class="fas fa-eraser"></i> LIMPAR PLACAR
+                    </button>
+                    <button class="menu-btn filled">
+                        <i class="fas fa-dumbbell"></i> MODO TREINO
+                    </button>
+                </div>
+            </div>
+
+            <div class="rc-card">
+                <div class="card-header">
+                    <i class="fas fa-wifi text-teal"></i>
+                    <h3>Monitoramento</h3>
+                </div>
+                <div class="sensor-box">
+                    <div class="sensor-info">
+                        <span class="s-type">Sensor Capacitivo</span>
+                        <span class="s-name">Detectação da Bola</span>
+                    </div>
+                    <div class="badge active">Ativo</div>
+                </div>
+                <div class="sensor-box">
+                    <div class="sensor-info">
+                        <span class="s-type">PIR Gol Esquerdo</span>
+                        <span class="s-name">Assistir Gol A</span>
+                    </div>
+                    <div class="badge inactive">Inativo</div>
+                </div>
+                <div class="sensor-box">
+                    <div class="sensor-info">
+                        <span class="s-type">PIR Gol Direito</span>
+                        <span class="s-name">Assistir Gol B</span>
+                    </div>
+                    <div class="badge inactive">Inativo</div>
+                </div>
+            </div>
+
+            <div class="rc-card">
+                <div class="card-header">
+                    <i class="fas fa-sliders-h text-pink"></i>
+                    <h3>Atuadores do Sistema</h3>
+                </div>
+                <div class="actuator-row">
+                    <span class="a-label">Posição do Motor de Passos</span>
+                    <span class="a-value text-pink">42°</span>
+                </div>
+                <div class="actuator-grid">
+                    <div class="a-box">
+                        <span class="a-label">LEDs</span>
+                        <div class="toggle-container">
+                            <span class="text-teal">ON</span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="a-box">
+                        <span class="a-label">Buzzer Teste</span>
+                        <button class="btn-trigger">Trigger</button>
+                    </div>
+                </div>
+                <div>
+                    <span class="a-label">Conteúdo do Display</span>
+                    <input type="text" class="display-input" value="GOL TIME AZUL!">
+                </div>
+            </div>
+
+            <div class="small-card">
+                <div class="sc-top">
+                    <span class="sc-label">Partidas Totais</span>
+                    <i class="far fa-futbol sc-icon text-pink"></i>
+                </div>
+                <div class="sc-value">1,248</div>
+            </div>
+
+            <div class="small-card">
+                <div class="sc-top">
+                    <span class="sc-label">Duração Média</span>
+                    <i class="fas fa-stopwatch sc-icon text-teal"></i>
+                </div>
+                <div class="sc-value">08:42</div>
+            </div>
+
+            <div class="small-card">
+                <div class="sc-top">
+                    <span class="sc-label">> Taxa de Vitória (Verde)</span>
+                </div>
+                <div class="sc-value text-teal">52.4%</div>
+            </div>
+
+            <div class="small-card">
+                <div class="sc-top">
+                    <span class="sc-label">Lançamentos Totais</span>
+                    <i class="fas fa-rocket sc-icon text-pink"></i>
+                </div>
+                <div class="sc-value text-pink">15.2K</div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div>© 2026 SMART PEBOLIM IOT •</div>
+        <div class="footer-links">
+            <span>Privacidade</span>
+            <span>Suporte</span>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="src/scripts/script.js"></script>
+</body>
+>>>>>>> 55cf63617f4fc157a0884c074c8cfea939f70024
 </html>
