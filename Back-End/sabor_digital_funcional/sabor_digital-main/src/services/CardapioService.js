@@ -8,6 +8,7 @@ class CardapioService {
             sucesso: true,
             dados: cardapios,
             total: cardapios.length
+            
         };
     }
 
