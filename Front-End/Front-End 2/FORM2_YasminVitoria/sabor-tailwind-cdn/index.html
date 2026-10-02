@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício de Prática - Tailwind com CDN (Formativa 2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { sabor: "#C1272D" },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav
+      class="bg-red-700 text-white px-6 py-4 flex justify-between items-center"
+    >
+      <a href="#" class="font-bold text-xl no-underline text-white">
+        🍽️ Sabor & Saber
+      </a>
+      <ul class="flex gap-6 list-none m-0 p-0">
+        <li>
+          <a
+            href="#cardapio"
+            class="text-white hover:text-red-200 transition-colors no-underline"
+          >
+            Cardápio
+          </a>
+        </li>
+        <li>
+          <a
+            href="#pedido"
+            class="text-white hover:text-red-200 transition-color no-underline"
+          >
+            Pedido
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+      <h2 class="text-center text-2xl font-bold mb-6">Nosso Cardápio</h2>
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        id="containerPratos"
+      ></section>
+    </main>
+
+    <section id="pedido" class="max-w-lg mx-auto px-4 py-8">
+      <h2 class="text-center text-2xl font-bold mb-6">Faça seu Pedido</h2>
+
+      <form>
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1"> Seu nome </label>
+          <input
+            type="text"
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium mb-1"> Prato favorito </label>
+          <select
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+          >
+            <option>Feijoada</option>
+            <option>Moqueca</option>
+          </select>
+        </div>
+        <button
+          type="button"
+          class="w-full bg-red-700 text-white font-bold py-3 rounded-lg hover:bg-red-800 transition-colors"
+        >
+          Confirmar Pedido
+        </button>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

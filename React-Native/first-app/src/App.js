@@ -11,13 +11,14 @@ import { NavigationContainer} from "@react-navigation/native"
 //import TelaMoeda from "./Hooks/useEffect_example";
 //import FormularioExemplo from "./text_input/formulario";
 //import StackNavigator from "./navigation/stack_navigation";
-import BottomTabNavigator from "./navigation/bottom_tab_navigation";
+import TelaMoeda from "./Hooks/useEffect_example";
+//import BottomTabNavigator from "./navigation/bottom_tab_navigation";
 // import TelaLogin from "./Hooks/useRef_example";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <BottomTabNavigator/>
+      <TelaMoeda/>
     </NavigationContainer>
   );
 }
